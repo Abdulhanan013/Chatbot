@@ -29,8 +29,7 @@ This repository contains a simple chatbot application built with a **React front
 - **Endpoints**:
   - `GET http://localhost:8000/api/health-check`: Health check endpoint
   - `POST http://localhost:8000/api/chat`: Accepts a user message and returns a predefined response.
-- Predefined responses (no LLM or WebSocket integration).
-- No authentication or persistent storage required.
+
 
 ---
 
@@ -43,6 +42,7 @@ This repository contains a simple chatbot application built with a **React front
   - Python
   - FastAPI
   - Uvicorn (for running the server)
+  - Docker
 
 ---
 
@@ -50,10 +50,19 @@ This repository contains a simple chatbot application built with a **React front
 
 ### Prerequisites
 - Node.js (for frontend)
-- Python 3.8+ (for backend)
 - Docker
 
 ---
+Note: If you use docker setup no need for any other installation just run the following commnds
+### Docker Setup
+1. In Chatbot directory Run the Follwing commands:
+   ```bash
+   docker compose build
+2. Next Run following command
+   ```bash
+   docker compose up
+
+
 
 ### Frontend Setup
 
@@ -71,9 +80,9 @@ This repository contains a simple chatbot application built with a **React front
    http://localhost:5173/
 ### Backend Setup
 
-1. In Chatbot directory Run the Follwing commands:
+1. In backend directory Run the Follwing commands:
    ```bash
-   docker compose build
+   pip install -r requirements.txt
 2. Next Run following command
    ```bash
-   docker compose up
+  uvicorn main:app --reload
